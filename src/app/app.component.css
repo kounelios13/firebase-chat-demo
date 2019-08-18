@@ -3,3 +3,13 @@ button.logout-btn {
   top: 15px;
   right: 15px;
 }
+
+.btn-container {
+  width: 100%;
+  padding: 5px;
+}
+
+.btn-container button {
+  width: 50%;
+  display: inline-block;
+}

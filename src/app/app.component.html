@@ -5,5 +5,9 @@
 </div>
 <ng-template #showLogin>
   <p>Please login.</p>
-  <button (click)="login()">Login with Google</button>
+  <div class="btn-container">
+    <button (click)="login()">Login with Google</button>
+    <button (click)="loginGitHub()">Login with GitHub</button>
+  </div>
+
 </ng-template>

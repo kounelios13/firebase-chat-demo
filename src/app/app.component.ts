@@ -1,19 +1,21 @@
-import { Component } from '@angular/core';
-import { AngularFireAuth } from '@angular/fire/auth';
-import { auth } from 'firebase/app';
+import { Component } from "@angular/core";
+import { AngularFireAuth } from "@angular/fire/auth";
+import { auth } from "firebase/app";
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  selector: "app-root",
+  templateUrl: "./app.component.html",
+  styleUrls: ["./app.component.css"]
 })
 export class AppComponent {
-    constructor(public afAuth: AngularFireAuth) {
-    }
-    login() {
-      this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
-    }
-    logout() {
-      this.afAuth.auth.signOut();
-    }
+  constructor(public afAuth: AngularFireAuth) {}
+  login() {
+    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  }
+  loginGitHub() {
+    this.afAuth.auth.signInWithPopup(new auth.GithubAuthProvider());
+  }
+  logout() {
+    this.afAuth.auth.signOut();
+  }
 }
