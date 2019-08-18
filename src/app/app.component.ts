@@ -9,11 +9,19 @@ import { auth } from "firebase/app";
 })
 export class AppComponent {
   constructor(public afAuth: AngularFireAuth) {}
-  login() {
-    this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+  async login() {
+    try {
+      await this.afAuth.auth.signInWithPopup(new auth.GoogleAuthProvider());
+    } catch (e) {
+      alert(e.message);
+    }
   }
-  loginGitHub() {
-    this.afAuth.auth.signInWithPopup(new auth.GithubAuthProvider());
+  async loginGitHub() {
+    try {
+      await this.afAuth.auth.signInWithPopup(new auth.GithubAuthProvider());
+    } catch (e) {
+      alert(e.message);
+    }
   }
   logout() {
     this.afAuth.auth.signOut();
